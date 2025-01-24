@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      red-flag-in-pixel-art-style-vector-removebg-preview_0: -1819620425463522347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
