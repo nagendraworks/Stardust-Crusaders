@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: dd87be7422dddff4b82cecb785d306b5
+guid: 1611fa6a9b8771443856abf9220c6e59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3803887304354961441
-    second: unitytut-birdbody_0
+      213: 4938948041290668095
+    second: sketch1737633617988_0
+  - first:
+      213: -8579346030557353621
+    second: sketch1737633617988_1
+  - first:
+      213: 6577662691388342723
+    second: sketch1737633617988_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unitytut-birdbody_0
+      name: sketch1737633617988_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 446
-        height: 520
+        x: 495
+        y: 614
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd7ed4a86a0e53bc0800000000000000
-      internalID: -3803887304354961441
+      spriteID: f38dd3d631baa8440800000000000000
+      internalID: 4938948041290668095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch1737633617988_1
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 587
+        width: 127
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69a8739d3a00f880800000000000000
+      internalID: -8579346030557353621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch1737633617988_2
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 466
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1ca8c2e5d884b50800000000000000
+      internalID: 6577662691388342723
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      unitytut-birdbody_0: -3803887304354961441
+      sketch1737633617988_0: 4938948041290668095
+      sketch1737633617988_1: -8579346030557353621
+      sketch1737633617988_2: 6577662691388342723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
