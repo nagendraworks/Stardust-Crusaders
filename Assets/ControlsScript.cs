@@ -4,10 +4,11 @@ using UnityEngine;
 public class ControlsScript : MonoBehaviour
 {
     public Rigidbody2D rb;
-
+    public SpriteRenderer spriteRenderer;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public TrailRenderer tr;
+
     public float jumpForce = 10f;
     public float fallMultiplier = 2.5f;
     private float Move;
@@ -41,13 +42,11 @@ public class ControlsScript : MonoBehaviour
         // Flip sprite based on movement direction
         if (Move > 0)
         {
-            // Facing right
-            transform.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = false;
         }
         else if (Move < 0)
         {
-            
-            transform.localScale = new Vector3(1, 1, 1);// Facing left
+            spriteRenderer.flipX = true;
         }
 
         // Jump logic
@@ -74,18 +73,24 @@ public class ControlsScript : MonoBehaviour
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.8f, 0.3f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 
-
-   private IEnumerator Dash()
+    private IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
 
-        // Invert the dash direction: if facing left (localScale.x is negative), dash right (positive direction)
-        Vector2 dashDirection = new Vector2(-Mathf.Sign(transform.localScale.x), 0).normalized;
+        // Calculate dash direction based on input
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        Vector2 dashDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
-        // Apply the dash velocity in the inverted direction
+        // Default to facing direction if no input
+        if (dashDirection == Vector2.zero)
+        {
+            dashDirection = new Vector2(transform.localScale.x, 0);
+        }
+
         rb.linearVelocity = dashDirection * dashingPower;
 
         // Enable trail effect
@@ -101,9 +106,7 @@ public class ControlsScript : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-
 }
-
 
 // using System.Collections;
 // using UnityEngine;
@@ -203,7 +206,7 @@ public class ControlsScript : MonoBehaviour
 //         yield return new WaitForSeconds(dashCooldown);
 //         canDash = true;
 
-
+    
 //     }
 
 
