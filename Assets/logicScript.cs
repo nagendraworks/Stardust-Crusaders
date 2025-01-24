@@ -5,9 +5,11 @@ using UnityEngine.UI; // For UI management
 public class logicScript : MonoBehaviour
 {
     public static logicScript instance; // Singleton instance
+    public GameObject winScreen;
     public GameObject gameOverScreen;
-    public Button restartButton; // Reference to the restart button UI
-    public string sceneName = "MainScene"; // Replace with your actual scene name
+
+    // Reference to the main character
+    public GameObject mainCharacter;
 
     void Awake()
     {
@@ -26,7 +28,16 @@ public class logicScript : MonoBehaviour
     void Start()
     {
         // Initialize the restart button with the OnClick function
-      
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Check if the MC's Y position is below -10
+        if (mainCharacter.transform.position.y < -10f)
+        {
+            GameOver();
+        }
     }
 
     // Function to trigger the game over state
@@ -44,5 +55,13 @@ public class logicScript : MonoBehaviour
     {
         // Reload the current scene (restart the game)
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void WinScreen()
+    {
+        // Show the game over screen
+        if (winScreen != null)
+        {
+            winScreen.SetActive(true);
+        }
     }
 }
